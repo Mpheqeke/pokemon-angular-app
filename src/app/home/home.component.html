@@ -1,1 +1,19 @@
-<p>home works!</p>
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div *ngIf="!isLoading" class="container">
+  <input
+    type="text"
+    class="search-input"
+    placeholder="Search Pokémon"
+    [(ngModel)]="searchQuery"
+    (ngModelChange)="onSearch($event)"
+  />
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="filteredPokemonList.length === 0 && !error" class="no-results">No Pokémon found</div>
+  <div *ngIf="filteredPokemonList.length > 0 && !error" class="pokemon-list">
+    <div *ngFor="let pokemon of filteredPokemonList" class="card" (click)="handleCardClick(pokemon.name)">
+      <img [src]="pokemon.sprite" alt="{{ pokemon.name }}" class="image" />
+      <div class="name">{{ pokemon.name }}</div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,40 @@
-<p>details works!</p>
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div *ngIf="!isLoading" class="card">
+  <div class="header">
+    <img [src]="pokemonDetails.sprite" alt="Pokemon Image" class="image" />
+    <h2 class="title">{{ pokemonDetails.name }}</h2>
+  </div>
+  <div class="details">
+    <div class="detail-row">
+      <span class="label">Height:</span>
+      <span class="value">{{ pokemonDetails.height }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Weight:</span>
+      <span class="value">{{ pokemonDetails.weight }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Base Experience:</span>
+      <span class="value">{{ pokemonDetails.baseExperience }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Move:</span>
+      <span class="value">{{ pokemonDetails.move }}</span>
+    </div>
+    <div class="detail-row">
+      <span class="label">Specie:</span>
+      <span class="value">{{ pokemonDetails.specie }}</span>
+    </div>
+  </div>
+  <div class="stats-container">
+    <h3 class="stats-title">Stats:</h3>
+    <div *ngFor="let stat of stats" class="stat-row">
+      <span class="stat-name">{{ stat.name }}:</span>
+      <div class="stat-bar-container">
+        <div class="stat-bar" [style.width.%]="(stat.level / 100) * 100"></div>
+      </div>
+      <span class="stat-value">{{ stat.level }}</span>
+    </div>
+  </div>
+</div>

@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'pokemon-angular-no-ssr';
+  title = 'pokemon-angular-app';
 }
