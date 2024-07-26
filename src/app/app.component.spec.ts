@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'pokemon-angular-no-ssr' title`, () => {
+  it(`should have the 'pokemon-angular-app' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('pokemon-angular-no-ssr');
+    expect(app.title).toEqual('pokemon-angular-app');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, pokemon-angular-no-ssr');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, pokemon-angular-app');
   });
 });
