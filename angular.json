@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/pokemon-angular-no-ssr",
+            "outputPath": "dist/pokemon-angular-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
